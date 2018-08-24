@@ -1,0 +1,34 @@
+Problema: dados o timestamp (exemplo: ano, ou dia, ou minuto, etc.) 
+          de nascimento e de morte de cada uma de n pessoas, 
+          determinar o timestamp em que havia a maior quantidade de pessoas vivas
+
+Entrada: uma lista com n pares (timestamp_nascimento, timestamp_morte)
+Saida: o timestamp no qual havia a maior quantidade de pessoas vivas
+
+Exemplo: 
+102, 11800000       L := tamanho do range de anos (ano_max - ano_min)
+100, 130000000      l := range máximo vivido por alguma pessoa
+80, 120000000
+101, 103000000
+90, 1020000000
+                    102_________________118
+              100_____________________________________130
+      80_____________________________________120
+                 101___103                              Algoritmo 1
+           90_______102                                 Complexidade = O(l*n + L)
+
+Resposta: 102                                   
+
+
+___80+_______90+________100+_101+________102+_____________119-___121-______131-_____
+                                             103- 104-
+
+
+                                                        Algoritmo 2
+                                                        Complexidade = O(n log n) 
+
+
+   Algoritmo Composto (misturando os dois, escolhendo de acordo com o caso)
+   Complexidade = O(Min{l*n + L, n log n})
+
+
