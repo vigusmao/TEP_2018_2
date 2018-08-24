@@ -1,0 +1,52 @@
+Quick Sort Randomizado
+
+Entrada: x1,  x2,  x3,  x4, ... ,  xn
+Saida:   y1 < y2 < y3 < y4 < ... < yn
+
+
+Q = total de comparacoes ao longo de todo o algoritmo
+Q = Somatorio(i,j) Qij
+
+Qij := 1, se yi e yj sao comparados ao longo do QSR; 0 acso contrario
+
+E(Q) = E( Somatorio(i,j) Qij )
+
+E(Q) = Somatorio(1<=i<j<=n) E(Qij)
+E(Q) = Somatorio(1<=i<j<=n) Pr{Qij == 1}
+
+Pr{yi ser comparado com o yj ao longo do QSR} = 2 / (j-i+1)
+
+  Somatorio(1<=i<j<=n) [ 2 / (j-i+1) ]
+= 2 Somatorio(1<=i<j<=n) [ 1 / (j-i+1) ]
+
+      
+       j   2    3    4    5        n-1      n
+     i
+     1    1/2  1/3  1/4  1/5      1/(n-1)   1/n
+     2         1/2  1/3  1/4      1/(n-2)   1/(n-1)
+     3              1/2  1/3      1/(n-3)   1/(n-2)
+    ...
+    n-1                                      1/2
+
+= 2 Somatorio(2<=k<=n) (n-k+1) (1/k)
+= 2 Somatorio(2<=k<=n) (n-k+1)/k
+= 2 [Somatorio(2<=k<=n) n/k  - Somatorio(2<=k<=n) (k/k)  + Somatorio(2<=k<=n) 1/k ]
+= 2 [ (n+1) Somatorio(2<=k<=n) 1/k  - (n-1)]
+= O(  2 [ (n+1) (log n - 1) -n+1 ] )    // numero harmonico
+= O(  2 [ (n log n - n - n + 1 ] )
+= O(  2 [ n log n ])
+= O(n log n)
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
