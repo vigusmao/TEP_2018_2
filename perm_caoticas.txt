@@ -1,0 +1,20 @@
+Entrada: inteiro positivo n
+Saída: uma lista com TODAS as permutações caóticas dos n primeiros inteiros positivos
+
+Uma permutação P é dita caótica se, para todo x, P[x] != x.
+
+Ex.: n = 3
+Saída:
+2, 3, 1
+
+Ex.: n = 4
+Saída:
+2, 1, 4, 3
+2, 3, 4, 1
+2, 4, 1, 3
+3, 1, 4, 2
+3, 4, 1, 2
+3, 4, 2, 1
+4, 1, 2, 3
+4, 3, 1, 2
+4, 3, 2, 1
