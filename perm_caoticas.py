@@ -3,8 +3,7 @@ def backtrack(estado_corrente, n):
     # 1. verifique se o estado corrente merece tratamento especial
     #  (se é um estado "final")
     if len(estado_corrente) == n:
-        print(estado_corrente)  # encontrei uma permutacao caótica!
-        return  # nada mais a ser feito a partir deste estado atual
+        return True  # encontrei!
 
     posicao_a_ser_preenchida = len(estado_corrente) + 1
     
@@ -21,14 +20,23 @@ def backtrack(estado_corrente, n):
         estado_corrente.append(candidato) 
         
         # 2.3 chamo recursivamente o próprio backtrack passando o novo estado
-        backtrack(estado_corrente, n)
+        if backtrack(estado_corrente, n) == True:
+            return True
         
         # 2.4 limpo a modificação que fiz
         estado_corrente.pop()
+
+    # 3. se nenhum "filho" meu encontrou o que era procurado, então retorno False
+    return False
 
 
 def perm_caoticas(n):
     # crio o estado inicial
     permutacao = []
-    backtrack(permutacao, n)
+    if backtrack(permutacao, n) == True:
+        print(permutacao)
+    else:
+        print("Nao encontrei")
+
+
     
