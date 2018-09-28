@@ -1,0 +1,21 @@
+Um número “mágico” é um número que pode ser escrito como a soma de parcelas 4 e 7 apenas.
+
+Ex.: 15 é mágico, pois 15 = 4+4+7
+        28 é mágico, pois 28 = 7+7+7+7
+
+1) Dado um número M, decidir se ele é mágico.
+
+2) Qual o maior número NÃO-mágico que existe?
+
+M = 4x + 7y,     x>=0   y>=0  inteiros
+
+M % 4 == 0  então M é mágico
+(M-7)  % 4 == 0  então M é mágico
+(M-14)  % 4 == 0 então M é mágico
+(M-21)  % 4 == 0 então M é mágico
+
+…
+
+Obs.: via backtracking -> exponencial
+      via M/7 divisões -> O(M) pseudo-polinomial (= exponencial!)
+      dá pra fazer em tempo constante!

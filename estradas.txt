@@ -1,0 +1,30 @@
+Entrada:
+- um array com “n” inteiros, representando 
+  a quantidade de habitantes em cada cidade (sabe-se que “q” delas são metrópoles)
+- “m” estradas ligando cidades (formato a definir)
+- nenhuma cidade é vizinha de mais do que outras “delta” cidades
+Ex.: lista de arestas
+1, 5
+8, 19
+15, 310
+
+Ex.: listas de adjacências
+1: 2, 3, 7, 9
+2: 1, 5
+3: 1, 4, 19
+
+Ex.: uma matriz booleana onde a posição [i, j] 
+       indica se há estrada entre i e j
+
+metrópoles são cidades com mais de 1M habitantes
+
+Pergunta: quantas estradas ligam duas metrópoles?
+
+Algoritmo 1: para cada metrópole, pergunte se cada vizinho seu é uma metrópole
+   Complexidade: O(n^2) , na verdade O(n + Min{q delta, m})
+
+Algoritmo 2: para cada par de metrópoles, pergunte se há uma estrada entre elas
+   Complexidade: O(n + q^2)
+
+Algoritmo 3: para cada estrada, pergunta se as duas pontas são metrópoles
+   Complexidade: O(m)
