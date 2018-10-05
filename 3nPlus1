@@ -1,0 +1,19 @@
+
+                  |   1, se n == 1
+      f(n)  =     |   3n+1,  se n > 1 é ímpar
+                  |    n/2,  se n > 1 é par
+                  
+      g(n) := é o tamanho da sequência que se obtém ao se aplicar
+                  sucessivamente a função f, começando em n e parando
+                  quando chegar em 1
+
+       g(n)  :=    #    n, f(n), f(f(n)), f(f(f(n))), …, 1
+
+             Ex.:      g(10)    #    10, 5, 16, 8, 4, 2, 1                 —> g(10) = 7
+                       g(13)    #    13, 40, 20, 10, 5, 16, 8, 4, 2, 1     —> g(13) = 10
+
+Dados dois inteiros Lmin e Lmax, determine o valor de n*, Lmin <= n <= Lmax,
+que maximiza g(n). A saída deve ser este n* e o g(n*).
+
+Ex.:
+Input:   Lmin = 1000     Lmax = 2000
