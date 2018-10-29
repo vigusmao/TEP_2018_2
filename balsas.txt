@@ -1,0 +1,14 @@
+O problema da carga da balsa
+
+__________________     Entrada:
+|    40  |  35   |          L := tamanho de cada um dos corredores (“pistas”) da balsa
+|    60  |  20   |          n = quantidade de carros na fila  
+|        |  30   |          tamanhos := uma lista de n inteiros        
+|        |  12   |    Objetivo: distribuir os carros (esquerda/direita) maximizando
+|        |       |          a quantidade de carros embarcados, sem “furar a fila”               
+|        |       |    
+|        |       |     Ex.:  L = 100,  n = 7
+|        |       |             tamanhos = [40, 35, 20, 60, 30, 12, 18] 
+|        |       |                                  
+|        |       |             Saída:  “EDDEDD (6)”  
+|________|_______|     
